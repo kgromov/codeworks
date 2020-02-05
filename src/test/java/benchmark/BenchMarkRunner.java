@@ -20,10 +20,9 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 public class BenchMarkRunner {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-//                .include(MapBenchMark.class.getSimpleName())
-//                .include(ListBenchMark.class.getSimpleName())
-//                .include(FilesCounterBenchMark.class.getSimpleName())
-                .include(ConvertStringCamelCase.class.getSimpleName())
+//                .include(ConvertStringCamelCase.class.getSimpleName())
+//                .include(CalculateDigitsSum.class.getSimpleName())
+                .include(BinaryArrayConverter.class.getSimpleName())
                 .forks(1)
                 .build();
 
