@@ -22,7 +22,8 @@ public class BenchMarkRunner {
         Options opt = new OptionsBuilder()
 //                .include(ConvertStringCamelCase.class.getSimpleName())
 //                .include(CalculateDigitsSum.class.getSimpleName())
-                .include(BinaryArrayConverter.class.getSimpleName())
+//                .include(BinaryArrayConverter.class.getSimpleName())
+                .include(CalculateSmiles.class.getSimpleName())
                 .forks(1)
                 .build();
 
