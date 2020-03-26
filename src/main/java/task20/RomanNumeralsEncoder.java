@@ -4,6 +4,9 @@ package task20;
  * Created by konstantin on 23.02.2020.
  */
 
+import java.util.NavigableMap;
+import java.util.TreeMap;
+
 /**
  * Create a function taking a positive integer as its parameter and returning a string containing the Roman Numeral representation of that integer.
 
@@ -24,6 +27,19 @@ package task20;
  M          1,000
  */
 public class RomanNumeralsEncoder {
+
+    private static final NavigableMap<Integer, Character> DECIMAL_TO_ROMAN = new TreeMap<>();
+
+    static
+    {
+        DECIMAL_TO_ROMAN.put(1, 'I');
+        DECIMAL_TO_ROMAN.put(5, 'V');
+        DECIMAL_TO_ROMAN.put(10, 'X');
+        DECIMAL_TO_ROMAN.put(50, 'L');
+        DECIMAL_TO_ROMAN.put(100, 'C');
+        DECIMAL_TO_ROMAN.put(500, 'D');
+        DECIMAL_TO_ROMAN.put(1000, 'M');
+    }
 
     public static String convert(int i)
     {

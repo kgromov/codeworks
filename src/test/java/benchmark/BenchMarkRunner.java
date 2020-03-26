@@ -23,7 +23,7 @@ public class BenchMarkRunner {
 //                .include(ConvertStringCamelCase.class.getSimpleName())
 //                .include(CalculateDigitsSum.class.getSimpleName())
 //                .include(BinaryArrayConverter.class.getSimpleName())
-                .include(CalculateSmiles.class.getSimpleName())
+                .include(WeightSortBenchMark.class.getSimpleName())
                 .forks(1)
                 .build();
 
