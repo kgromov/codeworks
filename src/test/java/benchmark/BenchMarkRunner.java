@@ -24,7 +24,8 @@ public class BenchMarkRunner {
 //                .include(CalculateDigitsSum.class.getSimpleName())
 //                .include(BinaryArrayConverter.class.getSimpleName())
 //                .include(WeightSortBenchMark.class.getSimpleName())
-                .include(LongestConsecBenchMark.class.getSimpleName())
+//                .include(LongestConsecBenchMark.class.getSimpleName())
+                .include(ParserBenchMark.class.getSimpleName())
                 .forks(1)
                 .build();
 
