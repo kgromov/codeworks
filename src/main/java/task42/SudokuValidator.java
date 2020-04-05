@@ -23,7 +23,7 @@ public class SudokuValidator {
             Set<Integer> columns = new HashSet<>();
             for (int j = 0; j < SIZE; j++) {
                 int cellRowValue = sudoku[i][j];
-                int cellColumnValue = sudoku[i][j];
+                int cellColumnValue = sudoku[j][i];
                 if (cellRowValue < 1 || cellRowValue > SIZE
                         || cellColumnValue < 1 || cellColumnValue > SIZE) {
                     return false;
