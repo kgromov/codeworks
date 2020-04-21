@@ -7,7 +7,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 // TODO: run via cmd?
 /*
-`1) @Param({"C:\\Projects\\nds_here\\nds-qa", "C:\\Projects\\nds_here\\"}) under fiels
+`1) @Param({"C:\\Projects\\nds_here\\nds-qa", "C:\\Projects\\nds_here\\"}) under files
  2) @Setup method
  3) Inside class to benchmark:
     @BenchmarkMode(Mode.AverageTime)
@@ -26,7 +26,8 @@ public class BenchMarkRunner {
 //                .include(WeightSortBenchMark.class.getSimpleName())
 //                .include(LongestConsecBenchMark.class.getSimpleName())
 //                .include(ParserBenchMark.class.getSimpleName())
-                .include(SudokuValidatorBenchMark.class.getSimpleName())
+//                .include(SudokuValidatorBenchMark.class.getSimpleName())
+                .include(RomanNumeralsEncoderBM.class.getSimpleName())
                 .forks(1)
                 .build();
 

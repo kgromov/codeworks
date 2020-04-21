@@ -31,26 +31,32 @@ import java.util.TreeMap;
  * 40 = XL,   90 = XC
  * 400 = CD,  900 = CM
  */
-public class RomanNumeralsEncoder {
+public class RomanNumeralsEasyEncoder {
 
-    private static final NavigableMap<Integer, Character> DECIMAL_TO_ROMAN = new TreeMap<>();
+    private static final NavigableMap<Integer, String> DECIMAL_TO_ROMAN = new TreeMap<>();
 
     static {
-        DECIMAL_TO_ROMAN.put(1, 'I');
-        DECIMAL_TO_ROMAN.put(5, 'V');
-        DECIMAL_TO_ROMAN.put(10, 'X');
-        DECIMAL_TO_ROMAN.put(50, 'L');
-        DECIMAL_TO_ROMAN.put(100, 'C');
-        DECIMAL_TO_ROMAN.put(500, 'D');
-        DECIMAL_TO_ROMAN.put(1000, 'M');
+        DECIMAL_TO_ROMAN.put(1, "I");
+        DECIMAL_TO_ROMAN.put(4, "IV");
+        DECIMAL_TO_ROMAN.put(5, "V");
+        DECIMAL_TO_ROMAN.put(9, "IX");
+        DECIMAL_TO_ROMAN.put(10, "X");
+        DECIMAL_TO_ROMAN.put(40, "XL");
+        DECIMAL_TO_ROMAN.put(50, "L");
+        DECIMAL_TO_ROMAN.put(90, "XC");
+        DECIMAL_TO_ROMAN.put(100, "C");
+        DECIMAL_TO_ROMAN.put(400, "CD");
+        DECIMAL_TO_ROMAN.put(500, "D");
+        DECIMAL_TO_ROMAN.put(900, "CM");
+        DECIMAL_TO_ROMAN.put(1000, "D");
     }
 
-    public static String convertRecursively(int arabicDigit) {
+    public static String convert(int arabicDigit) {
         return arabicDigit <= 0 || arabicDigit >= 4_000 ? "" : append(arabicDigit, new StringBuilder());
     }
 
     private static String append(int arabicDigit, StringBuilder romanDigit) {
-        Map.Entry<Integer, Character> factorEntry = DECIMAL_TO_ROMAN.floorEntry(arabicDigit);
+        Map.Entry<Integer, String> factorEntry = DECIMAL_TO_ROMAN.floorEntry(arabicDigit);
         // case for 1
         if (factorEntry == null) {
             romanDigit.append(DECIMAL_TO_ROMAN.get(1));
@@ -58,23 +64,13 @@ public class RomanNumeralsEncoder {
         }
         // common cases
         int factor = factorEntry.getKey();
-        char digit = factorEntry.getValue();
+        String digit = factorEntry.getValue();
         int times = arabicDigit / factor;
         int remaining = arabicDigit % factor;
-        int firstDigit = arabicDigit < 10 ? arabicDigit : Character.getNumericValue(String.valueOf(arabicDigit).charAt(0));
-        if (!(times == 4 || times == 9 || firstDigit == 4 || firstDigit == 9)) {
-            for (int i = 0; i < times; i++) {
-                romanDigit.append(digit);
-            }
-        } else {
-            boolean isPowerTen = factor == 1 || Character.getNumericValue(String.valueOf(factor).charAt(0)) == 1;
-            Map.Entry<Integer, Character> lowerEntry = isPowerTen ? factorEntry : DECIMAL_TO_ROMAN.lowerEntry(factor);
-            Map.Entry<Integer, Character> higherEntry = DECIMAL_TO_ROMAN.higherEntry(factor);
-            // corner cases
-            char left = lowerEntry == null ? DECIMAL_TO_ROMAN.get(1) : lowerEntry.getValue();
-            romanDigit.append(left).append(higherEntry.getValue());
-            remaining = arabicDigit - higherEntry.getKey() + (lowerEntry == null ? 1 : lowerEntry.getKey());
+        for (int i = 0; i < times; i++) {
+            romanDigit.append(digit);
         }
         return remaining == 0 ? romanDigit.toString() : append(remaining, romanDigit);
     }
+
 }
