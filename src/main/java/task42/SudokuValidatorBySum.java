@@ -8,7 +8,7 @@ public class SudokuValidatorBySum {
     private static final int BLOCK_SIZE = 3;
 
     public static boolean check(int[][] sudoku) {
-        if (sudoku.length != 9 || sudoku[0].length != 9) {
+        if (sudoku.length != SIZE || sudoku[0].length != SIZE) {
             return false;
         }
         int correctSum = (SIZE + 1) * SIZE / 2;

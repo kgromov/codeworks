@@ -27,7 +27,8 @@ public class BenchMarkRunner {
 //                .include(LongestConsecBenchMark.class.getSimpleName())
 //                .include(ParserBenchMark.class.getSimpleName())
 //                .include(SudokuValidatorBenchMark.class.getSimpleName())
-                .include(RomanNumeralsEncoderBM.class.getSimpleName())
+//                .include(RomanNumeralsEncoderBM.class.getSimpleName())
+                .include(BattleFieldValidatorBenchMark.class.getSimpleName())
                 .forks(1)
                 .build();
 
