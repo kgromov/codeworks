@@ -17,7 +17,7 @@
 
     <properties>
         <jmh.version>1.19</jmh.version>
-        <junt.version>4.12</junt.version>
+        <junt.version>4.13.1</junt.version>
     </properties>
 
     <dependencies>
