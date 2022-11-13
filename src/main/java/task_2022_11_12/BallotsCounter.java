@@ -34,7 +34,8 @@ public class BallotsCounter {
         }
         //  listOfBallots.stream().collect(Collectors.groupingBy(Function::identity(), Collectors.counting()));
         return voteResults.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue((o1, o2) -> -Integer.compare(o1.get(), o2.get())))
+//                .sorted(Map.Entry.comparingByValue((o1, o2) -> -Integer.compare(o1.get(), o2.get())))
+                .sorted(Map.Entry.comparingByValue(Comparator.comparing(AtomicInteger::get).reversed()))
                 .limit(1)
                 .filter(entry -> entry.getValue().get() > majority)
                 .map(Map.Entry::getKey)
