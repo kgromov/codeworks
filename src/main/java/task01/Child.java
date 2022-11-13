@@ -18,11 +18,15 @@ public class Child extends AbstractParent {
         return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public static void main(String[] args) throws NoSuchMethodException {
         AbstractParent parent = new AbstractParent("John Dou");
         Child child = new Child("John Dou", 20);
         MyAnnotation myAnnotation = parent.getClass().getAnnotation(MyAnnotation.class);
-        MyAnnotation methodAnnotation = parent.getClass().getMethod("getName").getAnnotation(MyAnnotation.class);
+        MyAnnotation methodAnnotation = child.getClass().getMethod("getName").getAnnotation(MyAnnotation.class);
         System.out.println(myAnnotation.value());
         if (child.getClass().isAnnotationPresent(MyAnnotation.class))
         {

@@ -53,7 +53,7 @@ public class BattleFieldNoPair {
                     boolean hasUp = j + 1 < SIZE;
                     // touch by diagonal
                     if ((hasLeft && hasDown && field[i - 1][j - 1] == 1)
-                            || (hasRight && hasDown && j + 1 < SIZE && field[i + 1][j - 1] == 1)
+                            || (hasRight && hasDown && field[i + 1][j - 1] == 1)
                             || (hasLeft && hasUp && field[i - 1][j + 1] == 1)
                             || (hasRight && hasUp && field[i + 1][j + 1] == 1)) {
                         return false;

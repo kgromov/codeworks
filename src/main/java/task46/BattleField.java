@@ -54,7 +54,7 @@ public class BattleField {
                     boolean hasUp = j + 1 < SIZE;
                     // touch by diagonal
                     if ((hasLeft && hasDown && field[i - 1][j - 1] == 1)
-                            || (hasRight && hasDown && j + 1 < SIZE && field[i + 1][j - 1] == 1)
+                            || (hasRight && hasDown && field[i + 1][j - 1] == 1)
                             || (hasLeft && hasUp && field[i - 1][j + 1] == 1)
                             || (hasRight && hasUp && field[i + 1][j + 1] == 1)) {
                         return false;
@@ -96,8 +96,7 @@ public class BattleField {
 
     private static Pair<Integer, Integer> getSizeHorizontally(int field[][], int rowIndex, int columnIndex) {
         int right = columnIndex + 1;
-        boolean hasRight = columnIndex + 1 < SIZE;
-        while (hasRight && right < SIZE && field[rowIndex][right] == 1) {
+        while (right < SIZE && field[rowIndex][right] == 1) {
             ++right;
         }
         return new Pair<>(columnIndex, right - 1);
@@ -105,8 +104,7 @@ public class BattleField {
 
     private static Pair<Integer, Integer> getSizeVertically(int field[][], int rowIndex, int columnIndex) {
         int up = rowIndex + 1;
-        boolean hasUp = rowIndex + 1 < SIZE;
-        while (hasUp && up < SIZE && field[up][columnIndex] == 1) {
+        while (up < SIZE && field[up][columnIndex] == 1) {
             ++up;
         }
         return new Pair<>(rowIndex, up - 1);

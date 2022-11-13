@@ -28,7 +28,10 @@ public class BenchMarkRunner {
 //                .include(ParserBenchMark.class.getSimpleName())
 //                .include(SudokuValidatorBenchMark.class.getSimpleName())
 //                .include(RomanNumeralsEncoderBM.class.getSimpleName())
-                .include(BattleFieldValidatorBenchMark.class.getSimpleName())
+//                .include(BattleFieldValidatorBenchMark.class.getSimpleName())
+//                .include(DaysInYearBenchmark.class.getSimpleName())
+//                .include(SquareDigitBenchmark.class.getSimpleName())
+                .include(BallotCounterBenchMark.class.getSimpleName())
                 .forks(1)
                 .build();
 
