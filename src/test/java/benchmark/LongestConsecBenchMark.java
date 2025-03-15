@@ -1,6 +1,6 @@
 package benchmark;
 
-import javafx.util.Pair;
+import task41.Pair;
 import org.openjdk.jmh.annotations.*;
 import task33.LongestConsec;
 

@@ -1,6 +1,6 @@
 package task41;
 
-import javafx.util.Pair;
+import task41.Pair;
 import org.junit.Assert;
 import org.junit.Test;
 

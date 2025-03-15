@@ -1,6 +1,6 @@
 package task41;
 
-import javafx.util.Pair;
+import task41.Pair;
 
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;

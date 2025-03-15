@@ -1,6 +1,6 @@
 package task46;
 
-import javafx.util.Pair;
+import task41.Pair;
 
 import java.util.HashMap;
 import java.util.HashSet;
