@@ -21,7 +21,8 @@ public class BenchMarkRunner {
 //                .include(DaysInYearBenchmark.class.getSimpleName())
 //                .include(SquareDigitBenchmark.class.getSimpleName())
 //                .include(BallotCounterBenchMark.class.getSimpleName())
-                .include(SortedCharsBenchmark.class.getSimpleName())
+//                .include(SortedCharsBenchmark.class.getSimpleName())
+                .include(WordsGroupingBenchmark.class.getSimpleName())
                 .forks(1)
                 .build();
 

@@ -29,14 +29,12 @@ public class SortedCharsBenchmark {
     private String inputString;
 
     @Benchmark
-    public String toSortedChartList()
-    {
+    public String toSortedChartList() {
         return Solution.toCamelCaseMySolution(inputString);
     }
 
     @Benchmark
-    public String toSortedCharsInString()
-    {
+    public String toSortedCharsInString() {
         return Solution.toCamelCaseAppendReplacement(inputString);
     }
 
