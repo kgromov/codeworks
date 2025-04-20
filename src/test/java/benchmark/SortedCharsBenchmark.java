@@ -1,22 +1,28 @@
 package benchmark;
 
 import org.openjdk.jmh.annotations.*;
-import task01.Solution;
+import tech_tasks.task_2025_03_14.SortedChars;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /*
-Benchmark                                                                            (inputString)  Mode  Cnt    Score   Error  Units
-SortedCharsBenchmark.toSortedCharsInString                                                       a  avgt    5  102.567 ± 2.927  ns/op
-SortedCharsBenchmark.toSortedCharsInString                                                     eat  avgt    5  106.452 ± 2.562  ns/op
-SortedCharsBenchmark.toSortedCharsInString                                     The_Stealth_Warrior  avgt    5  219.831 ± 4.445  ns/op
-SortedCharsBenchmark.toSortedCharsInString  lorem ipsum dolor sit amet consectetur adipiscing elit  avgt    5  138.844 ± 3.079  ns/op
-SortedCharsBenchmark.toSortedCharsInString                                       TheStealthWarrior  avgt    5  129.604 ± 2.606  ns/op
-SortedCharsBenchmark.toSortedChartList                                                           a  avgt    5   69.704 ± 4.879  ns/op
-SortedCharsBenchmark.toSortedChartList                                                         eat  avgt    5   69.342 ± 3.765  ns/op
-SortedCharsBenchmark.toSortedChartList                                         The_Stealth_Warrior  avgt    5  221.546 ± 4.414  ns/op
-SortedCharsBenchmark.toSortedChartList      lorem ipsum dolor sit amet consectetur adipiscing elit  avgt    5   81.424 ± 2.740  ns/op
-SortedCharsBenchmark.toSortedChartList                                           TheStealthWarrior  avgt    5   73.234 ± 1.874  ns/op
+Benchmark                                                                            (inputString)  Mode  Cnt     Score     Error  Units
+SortedCharsBenchmark.toSortedCharsAsString                                                       a  avgt    5    78.085 ±   9.483  ns/op
+SortedCharsBenchmark.toSortedCharsAsString                                                     eat  avgt    5    98.331 ±   5.966  ns/op
+SortedCharsBenchmark.toSortedCharsAsString                                     The_Stealth_Warrior  avgt    5   665.499 ±  33.306  ns/op
+SortedCharsBenchmark.toSortedCharsAsString  lorem ipsum dolor sit amet consectetur adipiscing elit  avgt    5  2137.920 ± 200.295  ns/op
+SortedCharsBenchmark.toSortedCharsAsString                                       TheStealthWarrior  avgt    5   582.197 ±  89.279  ns/op
+SortedCharsBenchmark.toSortedCharsInString                                                       a  avgt    5     1.981 ±   0.038  ns/op
+SortedCharsBenchmark.toSortedCharsInString                                                     eat  avgt    5    14.882 ±   0.615  ns/op
+SortedCharsBenchmark.toSortedCharsInString                                     The_Stealth_Warrior  avgt    5    77.388 ±   2.679  ns/op
+SortedCharsBenchmark.toSortedCharsInString  lorem ipsum dolor sit amet consectetur adipiscing elit  avgt    5   288.052 ±   8.086  ns/op
+SortedCharsBenchmark.toSortedCharsInString                                       TheStealthWarrior  avgt    5    62.914 ±   5.024  ns/op
+SortedCharsBenchmark.toSortedChartList                                                           a  avgt    5    54.958 ±   1.959  ns/op
+SortedCharsBenchmark.toSortedChartList                                                         eat  avgt    5    78.732 ±   3.115  ns/op
+SortedCharsBenchmark.toSortedChartList                                         The_Stealth_Warrior  avgt    5   439.195 ±  32.248  ns/op
+SortedCharsBenchmark.toSortedChartList      lorem ipsum dolor sit amet consectetur adipiscing elit  avgt    5  1538.585 ±  45.761  ns/op
+SortedCharsBenchmark.toSortedChartList                                           TheStealthWarrior  avgt    5   397.245 ±  42.841  ns/op
  */
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
@@ -29,13 +35,18 @@ public class SortedCharsBenchmark {
     private String inputString;
 
     @Benchmark
-    public String toSortedChartList() {
-        return Solution.toCamelCaseMySolution(inputString);
+    public List<Character> toSortedChartList() {
+        return SortedChars.toSortedChartList(inputString);
+    }
+
+    @Benchmark
+    public String toSortedCharsAsString() {
+        return SortedChars.toSortedCharsAsString(inputString);
     }
 
     @Benchmark
     public String toSortedCharsInString() {
-        return Solution.toCamelCaseAppendReplacement(inputString);
+        return SortedChars.toSortedCharsInString(inputString);
     }
 
 }
