@@ -1,7 +1,7 @@
 package benchmark;
 
 import org.openjdk.jmh.annotations.*;
-import task_2025_03_14.WordsGrouping;
+import tech_tasks.task_2025_03_14.WordsGrouping;
 
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;

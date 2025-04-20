@@ -3,6 +3,7 @@ package task_2025_03_14;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+import tech_tasks.task_2025_03_14.WordsGrouping;
 
 import java.util.ArrayList;
 import java.util.Collection;

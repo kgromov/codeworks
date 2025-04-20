@@ -1,4 +1,4 @@
-package task_2025_03_14;
+package tech_tasks.task_2025_03_14;
 
 import java.util.*;
 import java.util.stream.Collectors;

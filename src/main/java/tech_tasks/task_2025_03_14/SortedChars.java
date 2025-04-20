@@ -1,4 +1,4 @@
-package task_2025_03_14;
+package tech_tasks.task_2025_03_14;
 
 import java.util.Arrays;
 import java.util.Collections;
